@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "allowJs": true,
+      "outDir": "./dist",
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "moduleResolution": "node",
+      "baseUrl": "./src",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "strictNullChecks": false,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitAny": true,
+      "typeRoots": [
+        "node_modules/@types",
+        "src/@types"
+      ],
+      "paths": {
+        "@common/*": ["app/common/*"],
+        "@config/*": ["app/config/*"],
+        "@controllers/*": ["app/controllers/*"],
+        "@models/*": ["app/models/*"],
+        "@routes/*": ["app/routes/*"],
+        "@utils/*": ["app/utils/*"],
+      }
+    },
+    "include": ["src","__tests__"]
+  }
