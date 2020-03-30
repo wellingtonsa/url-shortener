@@ -27,8 +27,15 @@ export const Header = styled.div`
     position: absolute;
     width: 180px;
     height: 120px;
-    top: 10px;
-    left: 80px;
+    top: 2%;
+    left: 4%;
+
+    @media(max-width: 650px){
+      top: 0.15%;
+      left: 0.5%;
+      width: 140px;
+      height: 100px;
+    }
   }
 
   .form {
@@ -95,7 +102,13 @@ export const Content = styled.div`
     h2 {
       text-align: center;
     }
+
+    @media(max-width: 800px){
+      width: 100%;
+      padding:0 40px;
+    }
   }
+
 `;
 
 export const Footer = styled.div`

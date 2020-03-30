@@ -6,6 +6,10 @@ It's a challenge created by Interlink with the aim of evaluate the developer ski
 
 The application consists on a landing page capable of generating a functional, shortened link based on an input of a URL.
 
+## API
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=URLShortener&uri=https%3A%2F%2Fgitlab.com%2Finterlink-sa%2Fdev-challenge%2F-%2Fraw%2Fwellington-araujo%2Fproject%2F.insomnia%2FInsomnia_2020-03-30.json)
+
 ## Execution process
 
 **Clone the project using the following command in terminal**

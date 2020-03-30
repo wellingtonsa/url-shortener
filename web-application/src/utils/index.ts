@@ -7,3 +7,12 @@ export function redirectToExternalURL(url:string):void {
     window.location.replace(url);
   }, 2000);
 }
+
+export function copyURLToClipBoard():void{
+  let URL:any = document.getElementById("shortURL");
+  URL.select();
+  URL.setSelectionRange(0, 99999);
+
+
+  document.execCommand("copy");  
+}

@@ -14,6 +14,8 @@ export const Container = styled.div`
             font-size: 28px;
             margin-bottom: 100px;
             font-weight: 400;
+            padding: 0px 10px;
+            text-align: center;
         }
     }
 `;

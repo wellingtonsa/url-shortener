@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Input from 'common/styled/Input';
 import Alert from 'components/Alert';
+import CopyURL from 'components/CopyURL';
 
 import { ImagesPath } from 'constants/path';
 import { URL, IAlert } from 'constants/types';
@@ -19,6 +20,7 @@ const Landing:React.SFC = () => {
 
   const [value, setValue] = useState<string>('');
   const [urls, setUrls] = useState<URL[]>([]);
+  const [shortURL, setShortURL] = useState<string>('');
   const [alert, setAlert] = useState<IAlert>({ message: '' });
 
   const handleShortURL = async () => {
@@ -32,6 +34,7 @@ const Landing:React.SFC = () => {
     }
 
     setValue('');
+    setShortURL(response.url);
     await setAlert({ message: 'Success shrinking the URL!', type: 'success' });
     await loadURLs();
   };
@@ -61,6 +64,7 @@ const Landing:React.SFC = () => {
   return (
     <Container>
       <Alert message={alert.message} type={alert.type} resetMessage={resetAlert} />
+      <CopyURL URL={shortURL} resetURL={setShortURL} />
       <Header>
         <img src={ImagesPath.INTERLINK_LOGO} alt="" />
         <div className="form">
