@@ -1,6 +1,7 @@
 export enum RoutesPath {
     LANDING = '/',
-    REDIRECT = '/:shortURL'
+    REDIRECT = '/:shortURL',
+    ANALYSIS = '/analysis'
 }
 
 export enum ImagesPath {

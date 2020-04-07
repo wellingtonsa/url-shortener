@@ -38,6 +38,31 @@ export const Header = styled.div`
     }
   }
 
+ a {
+  position: absolute;
+  top: 10%;
+  right: 4%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 0;
+  background: #f6435d;
+  transition: filter 0.2s;
+  padding: 10px 20px;
+
+    :hover {
+      filter:brightness(90%)
+    }
+  
+
+    @media(max-width: 650px){
+      top: 2%;
+      left: 0.5%;
+    }
+ }
+
   .form {
     display: flex;
     margin-top: 80px;

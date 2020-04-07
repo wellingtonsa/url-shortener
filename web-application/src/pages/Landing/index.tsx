@@ -67,10 +67,11 @@ const Landing:React.SFC = () => {
       <CopyURL URL={shortURL} resetURL={setShortURL} />
       <Header>
         <img src={ImagesPath.INTERLINK_LOGO} alt="" />
+        <Link to="/analysis">Go to Analysis</Link>
         <div className="form">
           <h1>Shrink you link!</h1>
           <span>A long URL is always a problem. It&apos;s hard to remember and share.</span>
-
+    
           <Input
             value={value}
             onChange={setValue}
@@ -88,7 +89,7 @@ const Landing:React.SFC = () => {
             ? urls.map(({ short, clicks }, i) => (
               <div className="link" key={i}>
                 <Link to={`${short}`} target="_blank">{`${path}${short}`}</Link>
-                <span>{clicks}</span>
+                <span>{clicks?clicks.length:0}</span>
               </div>
             ))
             : (<h2>Nenhuma URL cadastrada.</h2>)}
