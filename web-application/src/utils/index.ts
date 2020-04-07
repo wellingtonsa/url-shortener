@@ -9,10 +9,10 @@ export function redirectToExternalURL(url:string):void {
 }
 
 export function copyURLToClipBoard():void{
-  let URL:any = document.getElementById("shortURL");
+  const URL:any = document.getElementById('shortURL');
   URL.select();
   URL.setSelectionRange(0, 99999);
 
 
-  document.execCommand("copy");  
+  document.execCommand('copy');
 }

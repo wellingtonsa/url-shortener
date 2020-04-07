@@ -48,7 +48,6 @@ const Landing:React.SFC = () => {
       await setAlert(response.message);
       return;
     }
-
     setUrls(response.urls);
   };
 
@@ -71,7 +70,7 @@ const Landing:React.SFC = () => {
         <div className="form">
           <h1>Shrink you link!</h1>
           <span>A long URL is always a problem. It&apos;s hard to remember and share.</span>
-    
+
           <Input
             value={value}
             onChange={setValue}
@@ -89,7 +88,7 @@ const Landing:React.SFC = () => {
             ? urls.map(({ short, clicks }, i) => (
               <div className="link" key={i}>
                 <Link to={`${short}`} target="_blank">{`${path}${short}`}</Link>
-                <span>{clicks?clicks.length:0}</span>
+                <span>{clicks ? clicks.length : 0}</span>
               </div>
             ))
             : (<h2>Nenhuma URL cadastrada.</h2>)}

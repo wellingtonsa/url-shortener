@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/interface-name-prefix */
+export interface IBar {
+    label: string ;
+    value: number;
+  }
 
 export interface Click {
-    CreatedAt: Date
+    createdAt: Date
 }
 export interface URL {
     full: string,
