@@ -12,6 +12,9 @@ class URLController {
       const click = await Click.create({})
       await url.set({ clicks: [...url.clicks, click] })
       await url.save()
+
+      Algolia.pushData(await URL.find().populate('clicks'))
+
       return res.json({ url: url.full })
     } catch (err) {
       return res.status(404).send({ error: true, message: 'Sorry, this URL not working.' })

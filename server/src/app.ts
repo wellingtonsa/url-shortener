@@ -1,4 +1,5 @@
 import express from 'express'
+import * as dotenv from 'dotenv'
 import { connect } from '@config/database'
 import cors from 'cors'
 
@@ -6,6 +7,7 @@ class App {
     public express:express.Application
 
     public constructor () {
+      dotenv.config()
       this.express = express()
       this.middlewares()
       this.database()

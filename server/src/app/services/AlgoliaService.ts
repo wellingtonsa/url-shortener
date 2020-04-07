@@ -7,7 +7,7 @@ class AlgoliaService {
     private algolia:SearchIndex;
 
     constructor () {
-      const client = algoliasearch('HHZKWC7UIG', '17622a823b3bb1bc097df1c6757ae81a')
+      const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_SECRET_KEY)
       this.algolia = client.initIndex('urlshortener')
     }
 

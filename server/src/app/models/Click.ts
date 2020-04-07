@@ -5,10 +5,10 @@ export interface Click extends Document {
 }
 
 const ClickSchema = new Schema({
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 export default model<Click>('Click', ClickSchema)
