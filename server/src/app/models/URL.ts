@@ -1,10 +1,11 @@
 import { Schema, Document, model } from 'mongoose'
+import { Click } from '@models/Click'
 import shortid from 'shortid'
 
 export interface URL extends Document {
     full: string;
     short: string;
-    clicks: number;
+    clicks: Click[];
 }
 
 const URLSchema = new Schema({
@@ -17,11 +18,13 @@ const URLSchema = new Schema({
     required: true,
     default: shortid.generate
   },
-  clicks: {
-    type: Number,
-    required: false,
-    default: 0
-  }
+  clicks: [
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'Click',
+        required: false,
+    }
+  ],
 })
 
 export default model<URL>('URL', URLSchema)

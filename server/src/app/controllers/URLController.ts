@@ -1,4 +1,5 @@
 import URL from '@models/URL'
+import Click from '@models/Click';
 import { verifyURL } from '@utils/index'
 import { Request, Response } from 'express'
 
@@ -7,7 +8,8 @@ class URLController {
     const { short } = req.params
     try {
       const url = await URL.findOne({ short })
-      await url.set({ clicks: url.clicks + 1 })
+      const click = await Click.create({});
+      await url.set({ clicks: [...url.clicks, click] })
       await url.save()
       return res.json({ url: url.full })
     } catch (err) {
@@ -18,7 +20,7 @@ class URLController {
   public async topFive (req: Request, res: Response): Promise<Response<string>> {
     try {
       const urls = await URL
-        .find()
+        .find().populate('clicks')
         .sort('-clicks')
         .limit(5)
 
