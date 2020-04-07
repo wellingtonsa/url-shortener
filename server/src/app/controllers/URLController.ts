@@ -1,5 +1,6 @@
 import URL from '@models/URL'
-import Click from '@models/Click';
+import Click from '@models/Click'
+import Algolia from '@services/AlgoliaService'
 import { verifyURL } from '@utils/index'
 import { Request, Response } from 'express'
 
@@ -8,7 +9,7 @@ class URLController {
     const { short } = req.params
     try {
       const url = await URL.findOne({ short })
-      const click = await Click.create({});
+      const click = await Click.create({})
       await url.set({ clicks: [...url.clicks, click] })
       await url.save()
       return res.json({ url: url.full })
@@ -36,6 +37,9 @@ class URLController {
       if (!await verifyURL(full)) return res.status(405).send({ error: true, message: 'Sorry, this URL not working. Try again using another URL' })
 
       const { short: url } = await URL.create({ ...req.body })
+
+      Algolia.pushData(await URL.find().populate('clicks'))
+
       return res.json({ url })
     } catch (err) {
       return res.status(404).send({ error: true, message: 'Sorry, happen a error when try create a new URLs.' })

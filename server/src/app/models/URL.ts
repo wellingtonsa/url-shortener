@@ -20,11 +20,11 @@ const URLSchema = new Schema({
   },
   clicks: [
     {
-        type: Schema.Types.ObjectId,
-        ref: 'Click',
-        required: false,
+      type: Schema.Types.ObjectId,
+      ref: 'Click',
+      required: false
     }
-  ],
+  ]
 })
 
 export default model<URL>('URL', URLSchema)

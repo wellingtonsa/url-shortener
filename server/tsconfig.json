@@ -24,6 +24,7 @@
         "@config/*": ["app/config/*"],
         "@controllers/*": ["app/controllers/*"],
         "@models/*": ["app/models/*"],
+        "@services/*": ["app/services/*"],
         "@routes/*": ["app/routes/*"],
         "@utils/*": ["app/utils/*"],
       }

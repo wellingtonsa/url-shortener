@@ -72,6 +72,7 @@ module.exports = {
     '@controllers',
     '@models',
     '@routes',
+    '@services',
     '@utils'
   ],
 
@@ -91,6 +92,7 @@ module.exports = {
     '^@config/(.*)$': '<rootDir>/src/app/config/$1',
     '^@controllers/(.*)$': '<rootDir>/src/app/controllers/$1',
     '^@models/(.*)$': '<rootDir>/src/app/models/$1',
+    '^@services/(.*)$': '<rootDir>/src/app/services/$1',
     '^@routes/(.*)$': '<rootDir>/src/app/routes/$1',
     '^@utils/(.*)$': '<rootDir>/src/app/utils/$1'
   },

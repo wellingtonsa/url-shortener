@@ -9,9 +9,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.149",
     "@types/request-promise": "^4.1.46",
+    "algoliasearch": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "mongoose": "^5.9.6",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
@@ -49,6 +53,7 @@
     "@config": "dist/app/config",
     "@controllers": "dist/app/controllers",
     "@models": "dist/app/models",
+    "@services": "dist/app/services",
     "@routes": "dist/app/routes",
     "@utils": "dist/app/utils"
   }
