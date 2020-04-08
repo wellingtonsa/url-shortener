@@ -6,6 +6,7 @@ export interface URL extends Document {
     full: string;
     short: string;
     clicks: Click[];
+    totalClicks?: number;
 }
 
 const URLSchema = new Schema({
@@ -24,7 +25,12 @@ const URLSchema = new Schema({
       ref: 'Click',
       required: false
     }
-  ]
+  ],
+  totalClicks: {
+    type: Number,
+    required: false,
+    default: 0
+  }
 })
 
 export default model<URL>('URL', URLSchema)

@@ -10,7 +10,7 @@ class URLController {
     try {
       const url = await URL.findOne({ short })
       const click = await Click.create({})
-      await url.set({ clicks: [...url.clicks, click] })
+      await url.set({ clicks: [...url.clicks, click], totalClicks: url.totalClicks + 1 })
       await url.save()
 
       Algolia.pushData(await URL.find().populate('clicks'))
@@ -25,7 +25,7 @@ class URLController {
     try {
       const urls = await URL
         .find().populate('clicks')
-        .sort('-clicks')
+        .sort('-totalClicks')
         .limit(5)
 
       return res.json({ urls })

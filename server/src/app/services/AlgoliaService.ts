@@ -18,11 +18,11 @@ class AlgoliaService {
 
     private async chuck (data: Array<URL>, size: number): Promise<any[][]> {
       const result = await data.map((d:URL) => {
-        const { full, short, clicks: click, _id } = d.toJSON()
+        const { full, short, clicks: click, totalClicks, _id } = d.toJSON()
 
         const clicks = click.map((c:Click) => ({ createdAt: c.createdAt.getTime() }))
 
-        return ({ full, short, clicks: clicks, objectID: _id })
+        return ({ full, short, clicks: clicks, totalClicks, objectID: _id })
       })
 
       return await _.chunk(result, size)
