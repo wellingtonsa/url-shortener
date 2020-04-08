@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import {
@@ -8,26 +9,38 @@ import { Link } from 'react-router-dom';
 import { getURL } from 'utils';
 import { URLList, URLContainer, URLListContainer } from '../index.styles';
 
+interface Props {
+  onClick(data:any): void;
+}
 
-const URLs:React.SFC = () => (
-  <URLListContainer>
-    <SearchBox />
-    <URLList hitComponent={URL} />
-  </URLListContainer>
-);
+function URLs({ onClick }:Props) {
+  const URL = (props:any) => {
+    const path = getURL();
 
-function URL(props:any) {
-  const path = getURL();
+    const handleClick = () => {
+      const { full, short, clicks } = props.hit;
+      onClick({ full, short, clicks });
+    };
+
+    return (
+      <URLContainer onClick={handleClick}>
+        <div className="links">
+          <Highlight attribute="full" hit={props.hit} />
+          <Link to={`${props.hit.short}`} target="_blank">{`${path}/${props.hit.short}`}</Link>
+        </div>
+        <div className="clicks">
+          {`${props.hit.clicks.length} clicks`}
+        </div>
+      </URLContainer>
+    );
+  };
+
+
   return (
-    <URLContainer>
-      <div className="links">
-        <Highlight attribute="full" hit={props.hit} />
-        <Link to={`${props.hit.short}`} target="_blank">{`${path}/${props.hit.short}`}</Link>
-      </div>
-      <div className="clicks">
-        {`${props.hit.clicks.length} clicks`}
-      </div>
-    </URLContainer>
+    <URLListContainer>
+      <SearchBox translations={{ placeholder: 'Search a URL...' }} />
+      <URLList hitComponent={URL} />
+    </URLListContainer>
   );
 }
 

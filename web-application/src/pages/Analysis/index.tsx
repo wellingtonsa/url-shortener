@@ -12,6 +12,7 @@ import URLs from './URLs';
 
 const Analysis:React.SFC = () => {
   const [urls, setUrls] = useState<URL[]>([]);
+  const [url, setUrl] = useState<URL>();
 
   const { width } = useWindowSize();
 
@@ -33,6 +34,7 @@ const Analysis:React.SFC = () => {
     'e1e4b77d18f82b2aeea66df7b949430f',
   );
 
+
   return (
     <AlgoliaProvider
       indexName="urlshortener"
@@ -42,10 +44,10 @@ const Analysis:React.SFC = () => {
         <header>
           <h1>Total clicks in your URLs</h1>
           <img src={ImagesPath.INTERLINK_LOGO} alt="" />
-          <Chart width={width} height={400} data={toBar(urls)} type="bar" />
+          <Chart width={width - 50} height={400} data={toBar(urls)} type="bar" />
         </header>
-        <div className="container">
-          <URLs />
+        <div className="content">
+          <URLs onClick={setUrl} />
         </div>
       </Container>
     </AlgoliaProvider>

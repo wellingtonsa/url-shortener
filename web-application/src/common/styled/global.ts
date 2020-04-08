@@ -71,9 +71,10 @@ export default createGlobalStyle`
         outline: 0;
         box-sizing: border-box;
         color: #f9f2f2;
+        
     }
 
-    html, border-style, #root {
+    html, body, #root {
         height: 100%;
     }
 
