@@ -1,5 +1,5 @@
 export function getURL(): string {
-  return window.location.href;
+  return window.location.host;
 }
 
 export function redirectToExternalURL(url:string):void {

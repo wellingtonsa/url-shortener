@@ -4,11 +4,16 @@ import { URL } from 'constants/types';
 import { toBar } from 'utils/chart';
 import { topFive } from 'services/URLService';
 import Chart from 'components/Chart';
+import { useWindowSize } from 'react-dooks';
+import { ImagesPath } from 'constants/path';
 import { Container, AlgoliaProvider } from './index.styles';
+import URLs from './URLs';
 
 
 const Analysis:React.SFC = () => {
   const [urls, setUrls] = useState<URL[]>([]);
+
+  const { width } = useWindowSize();
 
   const loadURLs = async () => {
     const response = await topFive();
@@ -35,8 +40,13 @@ const Analysis:React.SFC = () => {
     >
       <Container>
         <header>
-          <Chart width={1200} height={400} data={toBar(urls)} type="bar" />
+          <h1>Total clicks in your URLs</h1>
+          <img src={ImagesPath.INTERLINK_LOGO} alt="" />
+          <Chart width={width} height={400} data={toBar(urls)} type="bar" />
         </header>
+        <div className="container">
+          <URLs />
+        </div>
       </Container>
     </AlgoliaProvider>
   );

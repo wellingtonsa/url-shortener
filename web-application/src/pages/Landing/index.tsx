@@ -87,11 +87,11 @@ const Landing:React.SFC = () => {
           {!!urls && urls.length > 0
             ? urls.map(({ short, clicks }, i) => (
               <div className="link" key={i}>
-                <Link to={`${short}`} target="_blank">{`${path}${short}`}</Link>
+                <Link to={`${short}`} target="_blank">{`${path}/${short}`}</Link>
                 <span>{clicks ? clicks.length : 0}</span>
               </div>
             ))
-            : (<h2>Nenhuma URL cadastrada.</h2>)}
+            : (<h2>No URL yet.</h2>)}
         </div>
       </Content>
       <Footer>

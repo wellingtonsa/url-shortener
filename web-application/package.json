@@ -19,6 +19,7 @@
     "moment": "^2.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dooks": "^1.0.2",
     "react-instantsearch-dom": "^6.4.0",
     "react-lottie": "^1.2.3",
     "react-router-dom": "^5.1.2",
