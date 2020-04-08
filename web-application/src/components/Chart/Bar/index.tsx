@@ -5,7 +5,7 @@ import { Bar, BarSvgProps } from '@nivo/bar';
 import { Dimensions } from '@nivo/core';
 import { IBar } from 'constants/types';
 import moment from 'moment';
-import { Tooltip } from './index.styles';
+import { Tooltip } from '../index.styles';
 
 
 interface Props {

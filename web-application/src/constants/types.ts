@@ -4,6 +4,11 @@ export interface IBar {
     value: number;
   }
 
+export interface ICalendar {
+    day: string ;
+    value: number;
+  }
+
 export interface Click {
     createdAt: Date
 }

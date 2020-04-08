@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { URL } from 'constants/types';
-import { toBar } from 'utils/chart';
+import { toBar, toCalendar } from 'utils/chart';
 import { topFive } from 'services/URLService';
 import Chart from 'components/Chart';
 import { useWindowSize } from 'react-dooks';
@@ -48,6 +48,7 @@ const Analysis:React.SFC = () => {
         </header>
         <div className="content">
           <URLs onClick={setUrl} />
+          {url && (<Chart width={width - (width / 2)} height={400} data={toCalendar([url])} type="calendar" />)}
         </div>
       </Container>
     </AlgoliaProvider>

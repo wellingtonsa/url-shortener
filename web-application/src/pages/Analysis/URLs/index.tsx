@@ -6,15 +6,16 @@ import {
   SearchBox,
 } from 'react-instantsearch-dom';
 import { Link } from 'react-router-dom';
+import { URL } from 'constants/types';
 import { getURL } from 'utils';
 import { URLList, URLContainer, URLListContainer } from '../index.styles';
 
 interface Props {
-  onClick(data:any): void;
+  onClick(data:URL): void;
 }
 
 function URLs({ onClick }:Props) {
-  const URL = (props:any) => {
+  const URLComponent = (props:any) => {
     const path = getURL();
 
     const handleClick = () => {
@@ -39,7 +40,7 @@ function URLs({ onClick }:Props) {
   return (
     <URLListContainer>
       <SearchBox translations={{ placeholder: 'Search a URL...' }} />
-      <URLList hitComponent={URL} />
+      <URLList hitComponent={URLComponent} />
     </URLListContainer>
   );
 }

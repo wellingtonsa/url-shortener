@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@nivo/bar": "^0.61.1",
+    "@nivo/calendar": "^0.61.1",
     "@nivo/core": "^0.61.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
