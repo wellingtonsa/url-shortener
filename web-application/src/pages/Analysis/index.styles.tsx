@@ -188,6 +188,7 @@ export const Details = styled.div`
   display : flex;
   flex-direction: column;
   align-items: center;
+  color: #F4F5FA;
   width: 100%;
 
   .header {

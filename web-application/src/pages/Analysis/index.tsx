@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { URL } from 'constants/types';
-import { toBar, toCalendar } from 'utils/chart';
+import { toBar, toCalendar, toLine } from 'utils/chart';
 import { topFive } from 'services/URLService';
 import Chart from 'components/Chart';
 import { Link } from 'react-router-dom';
@@ -60,7 +60,10 @@ const Analysis:React.SFC = () => {
               <span>{`${url.clicks?.length} clicks`}</span>
             </div>
             {url.clicks && url.clicks.length > 0 && (
-              <Chart width={width - (width / 2)} height={200} data={toCalendar([url])} type="calendar" />
+              <>
+                <Chart width={width - (width / 2)} height={200} data={toCalendar([url])} type="calendar" />
+                <Chart width={width - (width / 2)} height={400} data={toLine([url])} type="line" />
+              </>
             )}
 
           </Details>
