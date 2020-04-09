@@ -182,3 +182,51 @@ export const URLContainer = styled.div`
   }
 
 `;
+
+
+export const Details = styled.div`
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .header {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+
+    h1 {
+      margin: 10px 0px;
+      font-weight: 500;
+    }
+
+    p {
+      color:#828387;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #f6435d;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 4px;
+      transition: filter 0.2s;
+
+      :hover {
+        filter: brightness(50%)
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 30px;
+      bottom: 10px;
+      color: #82838790;
+      font-size: 10px;
+    }
+  }
+
+`;

@@ -4,13 +4,17 @@ import { URL } from 'constants/types';
 import { toBar, toCalendar } from 'utils/chart';
 import { topFive } from 'services/URLService';
 import Chart from 'components/Chart';
+import { Link } from 'react-router-dom';
 import { useWindowSize } from 'react-dooks';
 import { ImagesPath } from 'constants/path';
-import { Container, AlgoliaProvider } from './index.styles';
+import { getURL } from 'utils';
+import { Container, Details, AlgoliaProvider } from './index.styles';
 import URLs from './URLs';
 
 
 const Analysis:React.SFC = () => {
+  const path = getURL();
+
   const [urls, setUrls] = useState<URL[]>([]);
   const [url, setUrl] = useState<URL>();
 
@@ -48,7 +52,19 @@ const Analysis:React.SFC = () => {
         </header>
         <div className="content">
           <URLs onClick={setUrl} />
-          {url && (<Chart width={width - (width / 2)} height={400} data={toCalendar([url])} type="calendar" />)}
+          {url && (
+          <Details>
+            <div className="header">
+              <p>{url.full}</p>
+              <Link to={`${url.short}`} target="_blank">{`${path}/${url.short}`}</Link>
+              <span>{`${url.clicks?.length} clicks`}</span>
+            </div>
+            {url.clicks && url.clicks.length > 0 && (
+              <Chart width={width - (width / 2)} height={200} data={toCalendar([url])} type="calendar" />
+            )}
+
+          </Details>
+          )}
         </div>
       </Container>
     </AlgoliaProvider>
