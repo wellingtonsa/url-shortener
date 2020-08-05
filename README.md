@@ -14,7 +14,7 @@ The application consists on a landing page capable of generating a functional, s
 
 **Clone the project using the following command in terminal**
 ```
-git clone https://gitlab.com/interlink-sa/dev-challenge.git
+git clone https://github.com/wellingtonsa/url-shortener.git
 ```
 **Enter into 'project' folder and execute the following commands to install all dependencies/libraries**
 
