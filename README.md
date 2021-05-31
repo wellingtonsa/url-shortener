@@ -38,7 +38,7 @@ npm install // or yarn install
   - ``` yarn dev ``` - For run the project
   - ``` yarn test ``` - For run the tests (backend only)
 
-## Main tools utilized
+## Main utilized tools
 
 ### Backend
 
@@ -77,11 +77,6 @@ npm install // or yarn install
 ![alt text](https://imgur.com/QOma4mj.png "Checking URL...")
 ![alt text](https://imgur.com/t041nZP.png "URL not working.r")
 
-
-
-## Final thought
-
-- In general, I liked so much do that challenge, ever I do a challenge, is an opportunity to show and test my skills. In addition, I just want say that this challenge was amazing and say thanks for give me an opportunity of do it. So, see you later =D
 
 
 
